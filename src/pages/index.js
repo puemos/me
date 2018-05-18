@@ -8,6 +8,8 @@ import SectionTitle from '../components/SectionTitle';
 
 import { media } from '../utils/media';
 import Project from '../components/Project';
+import projects from './projects.json';
+import articles from './articles.json';
 
 const Content = styled.div`
   margin-bottom: 3rem;
@@ -49,32 +51,7 @@ const IndexPage = props => (
     </Hero>
     <Content>
       <SectionTitle>Open source projects</SectionTitle>
-      {[
-        {
-          title: 'HLS downloader - Google Chrome extension',
-          link: 'https://github.com/puemos/hls-downloader-chrome-extension',
-          excerpt: 'Google Chrome Extension for sniffing and downloading HTTP Live streams (HLS)',
-          tech: 'Javascript',
-        },
-        {
-          title: 'Web recorder',
-          link: 'https://github.com/puemos/web-recorder',
-          excerpt: 'Browser microphone initialization and recording management',
-          tech: 'Typescript',
-        },
-        {
-          title: 'Hangman game',
-          link: 'https://github.com/puemos/elm-hangman',
-          excerpt: 'The game of Hangman written in Elm.',
-          tech: 'Elm',
-        },
-        {
-          title: 'AWS-lambda - ECR/ECS cleaner',
-          link: 'https://github.com/puemos/aws-lambda-ecr-cleaner',
-          excerpt: 'An AWS Lambda Function to automate ECR cleanup ♻️',
-          tech: 'AWS Lambda, Javascript',
-        },
-      ].map(project => (
+      {projects.map(project => (
         <Project
           key={project.title}
           title={project.title}
@@ -86,26 +63,7 @@ const IndexPage = props => (
     </Content>
     <Content>
       <SectionTitle>Latest stories</SectionTitle>
-      {[
-        {
-          title: 'Dos and don’ts while trying to persuade functional programming.',
-          date: 'Apr 27',
-          excerpt:
-            'A short list for helping you to convince your teammates to adopt functional programming (or any technology/practice/tool currently unknown…',
-          timeToRead: '3 min read',
-          link: 'https://hackernoon.com/dos-and-donts-while-trying-to-persuade-functional-programming-69a472c28580',
-          publication: 'Hacker Noon',
-        },
-        {
-          title: 'Why you should start a side project — and how',
-          date: 'Apr 11',
-          excerpt:
-            'A two-part article about how you can benefit from working on a side project and how you can start your own.',
-          timeToRead: '3 min read',
-          link: 'https://medium.com/ideas-at-igenius/why-you-should-start-a-side-project-and-how-8e63a33187e5',
-          publication: 'Ideas at iGenius',
-        },
-      ].map(post => (
+      {articles.map(post => (
         <Article
           title={post.title}
           date={post.date}

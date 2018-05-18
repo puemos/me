@@ -1,0 +1,26 @@
+[
+    {
+       "title": "HLS downloader - Google Chrome extension",
+       "link": "https://github.com/puemos/hls-downloader-chrome-extension",
+       "excerpt": "Google Chrome Extension for sniffing and downloading HTTP Live streams (HLS)",
+       "tech": "Javascript"
+    },
+    {
+       "title": "Web recorder",
+       "link": "https://github.com/puemos/web-recorder",
+       "excerpt": "Browser microphone initialization and recording management",
+       "tech": "Typescript"
+    },
+    {
+       "title": "Hangman game",
+       "link": "https://github.com/puemos/elm-hangman",
+       "excerpt": "The game of Hangman written in Elm.",
+       "tech": "Elm"
+    },
+    {
+       "title": "AWS-lambda - ECR/ECS cleaner",
+       "link": "https://github.com/puemos/aws-lambda-ecr-cleaner",
+       "excerpt": "An AWS Lambda Function to automate ECR cleanup ♻️",
+       "tech": "AWS Lambda, Javascript"
+    }
+ ]
