@@ -12,9 +12,10 @@ import Project from '../components/Project';
 const Content = styled.div`
   margin-bottom: 3rem;
   grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  padding: 3rem 6rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 2rem 2rem;
+  background: white;
   @media ${media.tablet} {
     padding: 3rem 2rem;
   }
@@ -27,7 +28,6 @@ const Content = styled.div`
 const Hero = styled.div`
   grid-column: 2;
   padding: 3rem 2rem 6rem 2rem;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   color: ${props => props.theme.dark};
 
   p {
@@ -45,8 +45,7 @@ const Hero = styled.div`
 const IndexPage = props => (
   <Wrapper>
     <Hero>
-      <h1>Hi.</h1>
-      <p>I&apos;m Shy Alter, a Senior Software Developer.</p>
+      <p>Shy Alter (puemos), a Senior Software Developer.</p>
     </Hero>
     <Content>
       <SectionTitle>Open source projects</SectionTitle>
@@ -56,6 +55,12 @@ const IndexPage = props => (
           link: 'https://github.com/puemos/hls-downloader-chrome-extension',
           excerpt: 'Google Chrome Extension for sniffing and downloading HTTP Live streams (HLS)',
           tech: 'Javascript',
+        },
+        {
+          title: 'Web recorder',
+          link: 'https://github.com/puemos/web-recorder',
+          excerpt: 'Browser microphone initialization and recording management',
+          tech: 'Typescript',
         },
         {
           title: 'Hangman game',
@@ -116,25 +121,3 @@ const IndexPage = props => (
 );
 
 export default IndexPage;
-
-/* eslint no-undef: off */
-export const IndexQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "DD.MM.YYYY")
-            category
-          }
-          excerpt(pruneLength: 200)
-          timeToRead
-        }
-      }
-    }
-  }
-`;

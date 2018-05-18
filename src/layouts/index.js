@@ -19,9 +19,20 @@ injectGlobal`
     }
   }
   a {
-    color: ${theme.dark};
+    color: ${theme.primary};
     text-decoration: none;
     transition: all ${theme.transitionTime};
+  }
+  h2{
+    background: linear-gradient(to right, #330867 0%, ${theme.primary} 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 2rem;
+  }
+  h2:hover{
+    background: ${theme.primary};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   a:hover {
     color: ${theme.primary};

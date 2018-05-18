@@ -1,4 +1,3 @@
-import Link from 'gatsby-link';
 import React from 'react';
 import styled from 'styled-components';
 import Subline from './Subline';
@@ -6,14 +5,21 @@ import Subline from './Subline';
 const Post = styled.article`
   display: flex;
   flex-direction: column;
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 `;
 
 const Title = styled.h2`
   position: relative;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
+`;
+const Subtitle = styled.span`
+  font-size: ${props => props.theme.fontSmall};
+  color: ${props => props.theme.light};
+  /* border: 1px solid ${props => props.theme.light}; */
+  background: #e6e6e6;
+  padding: 0.3rem 0.7rem;
+  border-radius: 7px;
 `;
 const Excerpt = styled.p`
   grid-column: -1 / 1;
@@ -23,9 +29,11 @@ const Excerpt = styled.p`
 const Project = ({ title, link, excerpt, tech }) => (
   <Post>
     <Title>
-      <Link to={link}>{title}</Link>
+      <a href={link}>{title}</a>
     </Title>
-    <Subline>{tech}</Subline>
+    <div>
+      <Subtitle>{tech}</Subtitle>
+    </div>
     <Excerpt>{excerpt}</Excerpt>
   </Post>
 );
